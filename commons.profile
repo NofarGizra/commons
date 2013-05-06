@@ -158,6 +158,9 @@ function commons_install_tasks() {
     'commons_admin_permissions' => array(
       'display' => FALSE,
     ),
+    'commons_set_permissions' => array(
+      'display' => FALSE,
+    ),
   );
 }
 
@@ -255,6 +258,19 @@ function commons_admin_permissions() {
   //get the administrator role, we set this in the install file
   $admin_role = user_role_load_by_name('administrator');
   user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+}
+
+/**
+ * Task callback; Set permissions.
+ */
+function commons_set_permissions() {
+  // Set PrivateMsg permissions for authenticated users.
+  $permissions = array(
+    'read privatemsg',
+    'write privatemsg',
+    'delete privatemsg',
+  );
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, $permissions);
 }
 
 /**
