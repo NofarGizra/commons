@@ -161,6 +161,9 @@ function commons_install_tasks() {
     'commons_set_permissions' => array(
       'display' => FALSE,
     ),
+    'commons_set_variables' => array(
+      'display' => FALSE,
+    ),
   );
 }
 
@@ -271,6 +274,14 @@ function commons_set_permissions() {
     'delete privatemsg',
   );
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, $permissions);
+}
+
+/**
+ * Task callback; Set variables.
+ */
+function commons_set_variables() {
+  // Do not inform the user about new messages on login.
+  variable_set('privatemsg_display_loginmessage', FALSE);
 }
 
 /**
