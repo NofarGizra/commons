@@ -43,6 +43,7 @@ dependencies[] = module_filter
 dependencies[] = og
 dependencies[] = panels
 dependencies[] = pathauto
+dependencies[] = privatemsg
 dependencies[] = quicktabs
 dependencies[] = r4032login
 dependencies[] = libraries
