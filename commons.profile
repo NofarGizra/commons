@@ -267,11 +267,12 @@ function commons_admin_permissions() {
  * Task callback; Set permissions.
  */
 function commons_set_permissions() {
-  // Set PrivateMsg permissions for authenticated users.
+  // Set permissions for authenticated users.
   $permissions = array(
     'read privatemsg',
     'write privatemsg',
     'delete privatemsg',
+    'access overlay',
   );
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, $permissions);
 }
