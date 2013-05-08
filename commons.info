@@ -41,6 +41,7 @@ dependencies[] = message_subscribe
 dependencies[] = metatag
 dependencies[] = module_filter
 dependencies[] = og
+dependencies[] = overlay
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = privatemsg
